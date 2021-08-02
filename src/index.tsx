@@ -5,6 +5,8 @@ import App from './App';
 //importando o Firebase
 import './services/firebase'
 
+import './styles/global.scss'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
