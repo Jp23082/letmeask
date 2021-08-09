@@ -1,7 +1,9 @@
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch} from 'react-router-dom';
 
 import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom";
+import { Room } from "./pages/Room";
+
 
 //Importando contextos
 import { AuthContextProvider } from './contexts/AuthContext'
@@ -11,8 +13,11 @@ function App() {
     //Criando as rotas da aplicação com React-Router-DOM
     <BrowserRouter>
     <AuthContextProvider>
+      <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/rooms/new" component={NewRoom}/>
+        <Route path="/rooms/:id" component={Room}/>
+      </Switch>
     </AuthContextProvider>
     </BrowserRouter>
   );
@@ -55,4 +60,12 @@ export default App;
  * Contextos - Aula 02
  * -> Formas de compartilhar informações e/ou funções entre 2 ou mais componetes. Como por exemplo 
  * informações do usuário logado ou se o mesmo está logado.
+ * 
+ * //Rotas com parametro - Aula 03
+ *    ->Para definir uma rota com parametro devemos colocar :
+ *            Ex: <Route path="/rooms/:id" component={Room}/>
+ * 
+ * Tag Switch do React-router-DOM
+ *  -> Responsavel por não deixar que mais de uma rota seja chamada ao mesmo tempo
+
  */
