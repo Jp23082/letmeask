@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Switch} from 'react-router-dom';
 import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom";
 import { Room } from "./pages/Room";
+import { AdminRoom } from './pages/AdminRoom';
 
 
 //Importando contextos
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/rooms/new" component={NewRoom}/>
         <Route path="/rooms/:id" component={Room}/>
+        <Route path="/admin/rooms/:id" component={AdminRoom}/>
       </Switch>
     </AuthContextProvider>
     </BrowserRouter>
@@ -67,5 +69,10 @@ export default App;
  * 
  * Tag Switch do React-router-DOM
  *  -> Responsavel por não deixar que mais de uma rota seja chamada ao mesmo tempo
+ * 
+ * Instalação sass
+ *  -> sass trata-se de um dependencia reposavel por permitir que o css seja escrito de uma forma
+ * mais atualizada.
+ *      -> Para Instalar: yarn add node-sass@^5.0.0 
 
  */

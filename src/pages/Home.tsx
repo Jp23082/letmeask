@@ -53,6 +53,11 @@ export function Home() {
             return;
         }
 
+        if(roomRef.val().endedAt){
+            alert('Room already closed.');
+            return;
+        }
+
         //Caso exista usuário será redirecionado
         history.push(`/rooms/${roomCode}`);
     }
